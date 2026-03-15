@@ -1,19 +1,44 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@heroui/react";
-let categories = ["All","Beef","Breakfast","Chicken","Dessert","Goat","Lamb","Miscellaneous","Pasta","Pork","Seafood","Side","Starter","Vegan","Vegetarian",
+
+let categories = [
+  "All",
+  "Beef",
+  "Breakfast",
+  "Chicken",
+  "Dessert",
+  "Goat",
+  "Lamb",
+  "Miscellaneous",
+  "Pasta",
+  "Pork",
+  "Seafood",
+  "Side",
+  "Starter",
+  "Vegan",
+  "Vegetarian",
 ];
 
-export default function Navbar({setCategory}) {
-
-
+// Added activeCategory prop to highlight the current selection
+export default function Navbar({ setCategory, activeCategory }) {
   return (
     <>
-      <div className="navbar flex flex-wrap">
+      {/* On mobile: Added sm:justify-start for better alignment. 
+        The flex-wrap ensures they flow like tags.
+      */}
+      <div className="navbar flex flex-wrap justify-center md:justify-start gap-2 mb-8">
         {categories.map((cat) => (
           <Button
-            
+            key={cat}
             onClick={() => setCategory(cat)}
-            className="rounded-3xl border-1.5 py-2 px-4 border-gray-400 m-2.5 bg-transparent hover:bg-white focus:bg-black focus:text-white font-bold text-neutral-500 hover:shadow-2xl duration-500"
+            className={`
+              rounded-full border-1.5 py-1 px-4 duration-500 font-bold transition-all
+              ${
+                activeCategory === cat
+                  ? "bg-black text-white border-black shadow-lg"
+                  : "bg-transparent text-neutral-500 border-gray-400 hover:bg-white hover:text-black hover:shadow-md"
+              }
+            `}
           >
             {cat}
           </Button>

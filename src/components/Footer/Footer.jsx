@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <>
-      <div className="footer mx-30 my-5 flex justify-between items-center  border-b-1 border-gray-400 pb-4 z-2 relative">
+      <div className="footer md:ml-64 mx-30 my-5 flex justify-between items-center  border-b-1 border-gray-400 pb-4 z-2 relative">
         <div className="image w-15 ">
           <Link to={"/"} className="w-full h-full flex items-center ">
             <img src={logo} />
