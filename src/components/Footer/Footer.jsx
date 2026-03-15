@@ -12,7 +12,6 @@ export default function Footer() {
             <h2 className="text-3xl font-semibold">Recipe</h2>
           </Link>
         </div>
-        <h2 className="text-3xl font-bold text-blue-700">route</h2>
       </div>
       <p className='text-center mb-4'>© 2026 All Rights Reserved.</p>
     </>
